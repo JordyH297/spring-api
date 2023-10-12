@@ -16,4 +16,12 @@ Task D:
 
     aboutController.java
     Lines 1-13: Created a mapping to render the about.html page.
+
+Task E:
+
+    BootStrapData.java
+    Lines 58-97: Added 5 parts and saved them to repo
+    Lines 109-118: Added 5 products and saved them to the repo.
+
+    
     
