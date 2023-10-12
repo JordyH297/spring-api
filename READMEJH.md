@@ -64,5 +64,48 @@ Task G:
     InhousePartServiceImpl.java AND OutsourcedPartServiceImpl.java
     Line 54: call method that validates min and max thresholds.
 
+Task H:
+    
+    Part.java
+    Lines 19-20: validation for min and max fields
+
+    PartInventoryMinimumValidator.java AND ValidPartInventoryMinimum:
+    new files that display errors when the inventory is low or if inventory is less than number of required parts.
+
+***NOTE: No validator is included for  because section F's requirements specify that the "Buy Now" button should not affect the inventory of the associated parts.
+    to implement this functionality, I would have had to make changes to the buyProduct() function I created, so that it also reduces the inventory of the associated parts as follows:
+
+    public boolean buyProduct() {
+    if (this.inv < 1) {
+        return false;
+    }
+
+    for (Part part : this.getParts()) {
+        if (part.getInv() < 1) {
+            return false;
+        }
+    }
+
+    this.inv--;
+    for (Part part : this.getParts()) {
+        part.setInv(part.getInv() - 1);
+    }
+    
+    return true;
+    }
+    Subsequently, I could have updated the error template to display the validation error that would have been triggered by the PartInventoryMinimumValidator.
+
+
+    PartInventoryValidator AND ValidPartInventory.java:
+    new files that display errors when adding or updating when beyond maximum amount.
+
+Task I:
+    
+    PartTest.java
+    Lines 160-177: Two tests that check min and max fields.
+
+Task J:
+
+    All validators are used in the project. 
 
 
