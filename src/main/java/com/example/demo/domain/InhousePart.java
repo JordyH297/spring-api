@@ -15,6 +15,8 @@ public class InhousePart extends Part{
     int partId;
 
     public InhousePart() {
+        this.minimum = 0;
+        this.maximum = 100;
     }
 
     public int getPartId() {
