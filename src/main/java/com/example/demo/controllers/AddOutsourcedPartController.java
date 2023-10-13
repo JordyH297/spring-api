@@ -32,8 +32,8 @@ public class AddOutsourcedPartController {
 
     @GetMapping("/showFormAddOutPart")
     public String showFormAddOutsourcedPart(Model theModel){
-        Part part=new OutsourcedPart();
-        theModel.addAttribute("outsourcedpart",part);
+        OutsourcedPart outsourcedPart=new OutsourcedPart();
+        theModel.addAttribute("outsourcedpart",outsourcedPart);
         return "OutsourcedPartForm";
     }
 
@@ -47,7 +47,7 @@ public class AddOutsourcedPartController {
         OutsourcedPartService repo=context.getBean(OutsourcedPartServiceImpl.class);
         OutsourcedPart op=repo.findById((int)part.getId());
         if(op!=null)part.setProducts(op.getProducts());
-            repo.save(part);
+        repo.save(part);
         return "confirmationaddpart";}
     }
 

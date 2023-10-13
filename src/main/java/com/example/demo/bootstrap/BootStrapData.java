@@ -55,48 +55,48 @@ public class BootStrapData implements CommandLineRunner {
 
         System.out.println(thePart.getCompanyName());
         */
-        OutsourcedPart hudsonWheels = new OutsourcedPart();
-        hudsonWheels.setCompanyName("Hudson");
-        hudsonWheels.setName("hudson wheels");
-        hudsonWheels.setInv(5);
-        hudsonWheels.setPrice(20.0);
-        hudsonWheels.setId(100L);
+        OutsourcedPart computronTower = new OutsourcedPart();
+        computronTower.setCompanyName("Computron");
+        computronTower.setName("Computer Tower");
+        computronTower.setInv(5);
+        computronTower.setPrice(50.0);
+        computronTower.setId(100L);
 
-        OutsourcedPart hurleyWheels = new OutsourcedPart();
-        hurleyWheels.setCompanyName("Hurley");
-        hurleyWheels.setName("hurley wheels");
-        hurleyWheels.setInv(3);
-        hurleyWheels.setPrice(16.0);
-        hurleyWheels.setId(101L);
+        OutsourcedPart computronHeatSink = new OutsourcedPart();
+        computronHeatSink.setCompanyName("Computron");
+        computronHeatSink.setName("Heat Sink");
+        computronHeatSink.setInv(3);
+        computronHeatSink.setPrice(20.0);
+        computronHeatSink.setId(101L);
 
-        OutsourcedPart hurleyFrame = new OutsourcedPart();
-        hurleyFrame.setCompanyName("Hurley");
-        hurleyFrame.setName("hurley frame");
-        hurleyFrame.setInv(2);
-        hurleyFrame.setPrice(75.0);
-        hurleyFrame.setId(102L);
+        OutsourcedPart computronMotherboard = new OutsourcedPart();
+        computronMotherboard.setCompanyName("Computron");
+        computronMotherboard.setName("Motherboard");
+        computronMotherboard.setInv(2);
+        computronMotherboard.setPrice(75.0);
+        computronMotherboard.setId(102L);
 
-        OutsourcedPart hudsonHandlebars = new OutsourcedPart();
-        hudsonHandlebars.setCompanyName("Hudson");
-        hudsonHandlebars.setName("hudson handlebars");
-        hudsonHandlebars.setInv(1);
-        hudsonHandlebars.setPrice(25.0);
-        hudsonHandlebars.setId(103L);
+        OutsourcedPart hudsonRam = new OutsourcedPart();
+        hudsonRam.setCompanyName("Hudson");
+        hudsonRam.setName("RAM");
+        hudsonRam.setInv(15);
+        hudsonRam.setPrice(70.0);
+        hudsonRam.setId(103L);
 
-        OutsourcedPart hudsonBrakes = new OutsourcedPart();
-        hudsonBrakes.setCompanyName("Hudson");
-        hudsonBrakes.setName("hudson brakes");
-        hudsonBrakes.setInv(10);
-        hudsonBrakes.setPrice(10.0);
-        hudsonBrakes.setId(104L);
+        OutsourcedPart hudsonCpu = new OutsourcedPart();
+        hudsonCpu.setCompanyName("Hudson");
+        hudsonCpu.setName("CPU");
+        hudsonCpu.setInv(3);
+        hudsonCpu.setPrice(100.0);
+        hudsonCpu.setId(104L);
 
         long partCount = outsourcedPartRepository.count();
         if(partCount == 0) {
-            outsourcedPartRepository.save(hudsonWheels);
-            outsourcedPartRepository.save(hurleyWheels);
-            outsourcedPartRepository.save(hurleyFrame);
-            outsourcedPartRepository.save(hudsonHandlebars);
-            outsourcedPartRepository.save(hudsonBrakes);
+            outsourcedPartRepository.save(computronTower);
+            outsourcedPartRepository.save(computronHeatSink);
+            outsourcedPartRepository.save(computronMotherboard);
+            outsourcedPartRepository.save(hudsonRam);
+            outsourcedPartRepository.save(hudsonCpu);
         }
         List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
         for(OutsourcedPart part:outsourcedParts){
@@ -109,18 +109,18 @@ public class BootStrapData implements CommandLineRunner {
         productRepository.save(bicycle);
         productRepository.save(unicycle);
         */
-        Product roadBike = new Product("road bike", 100,15);
-        Product bmxBike = new Product("bmx bike", 150.0, 8);
-        Product mountainBike = new Product("mountain bike", 125.0,5);
-        Product hybridBike = new Product("hybrid bike", 175,3);
-        Product electricBike = new Product("electric bike", 200.0, 2);
+        Product refurbishedLaptop = new Product("Refurbished Laptop", 100,15);
+        Product newLaptop = new Product("New Laptop", 150.0, 8);
+        Product refurbishedWorkstation = new Product("Refurbished Workstation", 125.0,5);
+        Product newDesktop = new Product("New Desktop", 175,3);
+        Product refurbishedGamingLaptop = new Product("Refurbished Gaming Laptop", 200.0, 2);
         long productCount = productRepository.count();
         if(productCount ==0) {
-            productRepository.save(roadBike);
-            productRepository.save(bmxBike);
-            productRepository.save(mountainBike);
-            productRepository.save(hybridBike);
-            productRepository.save(electricBike);
+            productRepository.save(refurbishedLaptop);
+            productRepository.save(newLaptop);
+            productRepository.save(refurbishedWorkstation);
+            productRepository.save(newDesktop);
+            productRepository.save(refurbishedGamingLaptop);
         }
 
         System.out.println("Started in Bootstrap");
