@@ -106,6 +106,5 @@ Task I:
 
 Task J:
 
-    All validators are used in the project. 
-
+    Removed DeletePartValidator.java as it's not being referenced anywhere in the project.
 
