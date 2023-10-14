@@ -91,13 +91,11 @@ public class BootStrapData implements CommandLineRunner {
         hudsonCpu.setId(104L);
 
         long partCount = outsourcedPartRepository.count();
-        if(partCount == 0) {
             outsourcedPartRepository.save(computronTower);
             outsourcedPartRepository.save(computronHeatSink);
             outsourcedPartRepository.save(computronMotherboard);
             outsourcedPartRepository.save(hudsonRam);
             outsourcedPartRepository.save(hudsonCpu);
-        }
         List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
         for(OutsourcedPart part:outsourcedParts){
             System.out.println(part.getName()+" "+part.getCompanyName());
@@ -115,13 +113,11 @@ public class BootStrapData implements CommandLineRunner {
         Product newDesktop = new Product("New Desktop", 175,3);
         Product refurbishedGamingLaptop = new Product("Refurbished Gaming Laptop", 200.0, 2);
         long productCount = productRepository.count();
-        if(productCount ==0) {
             productRepository.save(refurbishedLaptop);
             productRepository.save(newLaptop);
             productRepository.save(refurbishedWorkstation);
             productRepository.save(newDesktop);
             productRepository.save(refurbishedGamingLaptop);
-        }
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Products"+productRepository.count());
